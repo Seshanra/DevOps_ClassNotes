@@ -71,9 +71,21 @@ and copy these commands
 
  # sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
  # sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-    
+===========================================================================================    
+    ISSUE
     yum install epel-release # repository that provides 'daemonize'
   amazon-linux-extras install epel -y && yum update jenkins -y
+  vim /etc/yum.repos.d/epelfordaemonize.repo
+
+[daemonize]
+baseurl=https://download-ib01.fedoraproject.org/pub/epel/7/x86_64/
+gpgcheck=no
+enabled=yes
+Step2. yum install daemonize -y
+
+Step3. yum install jenkins java-1.8.0-openjdk-devel -y
+===========================================================================================  
+  
   yum install jenkins
   
  # systemctl start jenkins
